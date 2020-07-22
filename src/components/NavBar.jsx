@@ -165,7 +165,7 @@ class Navbar extends Component {
               alt="The YoutTube logo"
             />
           </Link>
-          <form style={this.searchForm} onSubmit={this.handleSearch}>
+          <form style={this.searchForm} className='searchForm' onSubmit={this.handleSearch}>
             <input
               name="searchBar"
               type="text"
@@ -257,15 +257,6 @@ class Navbar extends Component {
               <Search alt="Search logo" style={this.searchIcon} />
             </button>
           </form>
-          <IconButton style={this.iconButtonStyle}>
-            <VideoCall style={this.iconStyle} />
-          </IconButton>
-          <IconButton style={this.iconButtonStyle}>
-            <Apps style={this.iconStyle} />
-          </IconButton>
-          <IconButton style={this.iconButtonStyle}>
-            <MoreVert style={this.iconStyle} />
-          </IconButton>
           <GoogleLogin
             clientId={config.CLIENT_ID}
             isSignedIn={true}

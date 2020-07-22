@@ -15,7 +15,7 @@ class CommentListItem extends Component {
   }
   render() {
     return (
-      <div style={{ height: "auto", width: 1100, marginBottom: "20px" }}>
+      <div style={{ height: "auto",  width: "70%", marginBottom: "20px" }}>
         <Comment
           author={
             <p style={{ color: "grey" }}>
@@ -33,7 +33,7 @@ class CommentListItem extends Component {
                 this.props.comment.snippet.topLevelComment.snippet
                   .authorProfileImageUrl
               }
-              alt="Han Solo"
+              alt="Author"
             />
           }
           content={

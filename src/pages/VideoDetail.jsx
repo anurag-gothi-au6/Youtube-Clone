@@ -14,7 +14,7 @@ export class VideoDetail extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='curVideo'>
         {this.props.currentVideo ? (
           <VideoPlayer video={this.props.currentVideo.items[0]} />
         ) : (

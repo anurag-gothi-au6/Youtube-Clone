@@ -98,17 +98,20 @@ class VideoPlayer extends Component {
         //console.log(this.props)
         return (
             <>
-            <div className="embed-responsive embed-responsive-16by9" style={{height: "auto", width: 1100}}>
-                <iframe
-                    title="video"
-                    src={`https://www.youtube.com/embed/${this.props.video.id}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                />
-            </div>
+            <div
+          className="embed-responsive embed-responsive-16by9 curVideo"
+          style={{ height: "auto", width: "90%" }}
+        >
+          <iframe
+            title="video"
+            src={`https://www.youtube.com/embed/${this.props.video.id}`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
             <br/>
-            <div style={{height: "auto", width: 1100}}>
+            <div style={{height: "auto",  width: "90%"}}>
             <Title level={3}>{this.props.video.snippet.title}</Title>
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                 <Col span="4">
@@ -142,7 +145,7 @@ class VideoPlayer extends Component {
                 <Col span="1">
                     <Avatar src={this.props.video.snippet.channelId}/>
                 </Col>
-                <Col span="17">
+                <Col span="13">
                     <p>{this.props.video.snippet.channelTitle}</p>
                 </Col>
                 <Col span="2">
@@ -161,7 +164,7 @@ class VideoPlayer extends Component {
                     anchorClass=''
                     onClick={this.executeOnClick}
                     expanded={false}
-                    width={1100}
+                    width={'80%'}
                 >
                 {this.props.video.snippet.description}
             </ShowMoreText>
@@ -174,7 +177,7 @@ class VideoPlayer extends Component {
                     <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }} >A</Avatar>
                 </Col>
                 <Col span="22">
-                    <TextArea placeholder="Add a Public Comment"></TextArea>
+                    <TextArea style={{width:'50%',margin:'auto'}} className='commentInput' placeholder="Add a Public Comment"></TextArea>
                 </Col>
             </Row>
             <br/>

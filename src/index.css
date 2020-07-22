@@ -80,3 +80,28 @@ code {
   width: 90%;
   margin: auto;
 }
+.curVideo{
+  width: 70%;
+  text-align: left;
+}
+.ant-input{
+  width: 50%;
+}
+@media only screen and (max-width: 1000px) {
+  .content{
+    width: 93%;
+  }
+  .navbarSize{
+    width: auto;
+    height: auto;
+  }
+  .curVideo{
+    width: 100%;
+  }
+
+  .searchForm{
+    margin-bottom: 10%;
+    background-color: black;
+  }
+}
+
