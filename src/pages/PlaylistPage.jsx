@@ -16,6 +16,7 @@ class PlaylistPage extends Component {
         <div class="card" key={el.id}>
           <h5 class="card-header">Playlist</h5>
           <div class="card-body">
+            <img src={el.snippet.thumbnails.medium.url} alt='PlaylistImage'></img>
             <h5 class="card-title">{el.snippet.title}</h5>
             <p class="card-text">
             {el.snippet.description}
