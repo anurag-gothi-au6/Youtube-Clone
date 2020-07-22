@@ -15,7 +15,7 @@ class CommentListItem extends Component {
   }
   render() {
     return (
-      <div style={{ height: "auto",  width: "70%", marginBottom: "20px" }}>
+      <div style={{ height: "auto",  width: "100%", marginBottom: "20px" }}>
         <Comment
           author={
             <p style={{ color: "grey" }}>

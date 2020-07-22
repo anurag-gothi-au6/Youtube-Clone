@@ -81,7 +81,7 @@ code {
   margin: auto;
 }
 .curVideo{
-  width: 70%;
+  width: 80%;
   text-align: left;
 }
 .ant-input{
@@ -98,7 +98,9 @@ code {
   .curVideo{
     width: 100%;
   }
-
+  .like{
+    display: none;
+  }
   .searchForm{
     margin-bottom: 10%;
     background-color: black;
