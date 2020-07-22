@@ -6,9 +6,6 @@ import { connect } from "react-redux";
 import SideList from "./SideList";
 import { logoutUser, setUser } from "../redux/actions/userActions";
 import Search from "@material-ui/icons/Search";
-import VideoCall from "@material-ui/icons/VideoCall";
-import MoreVert from "@material-ui/icons/MoreVert";
-import Apps from "@material-ui/icons/Apps";
 import Menu from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import Drawer from "@material-ui/core/Drawer";
@@ -165,7 +162,7 @@ class Navbar extends Component {
               alt="The YoutTube logo"
             />
           </Link>
-          <form style={this.searchForm} className='searchForm' onSubmit={this.handleSearch}>
+          <form style={this.searchForm} onSubmit={this.handleSearch}>
             <input
               name="searchBar"
               type="text"
@@ -176,15 +173,6 @@ class Navbar extends Component {
               <Search alt="Search logo" style={this.searchIcon} />
             </button>
           </form>
-          <IconButton style={this.iconButtonStyle}>
-            <VideoCall style={this.iconStyle} />
-          </IconButton>
-          <IconButton style={this.iconButtonStyle}>
-            <Apps style={this.iconStyle} />
-          </IconButton>
-          <IconButton style={this.iconButtonStyle}>
-            <MoreVert style={this.iconStyle} />
-          </IconButton>
           <GoogleLogout
             clientId={config.CLIENT_ID}
             buttonText="Logout"
@@ -236,7 +224,7 @@ class Navbar extends Component {
     ) : (
       <div className="navbarSize">
         <div style={{ ...this.topNavStyle, ...this.topNavZIndex }}>
-          <IconButton style={this.sideListButtonStyle}>
+          <IconButton onClick={this.toggleDrawer} style={this.sideListButtonStyle}>
             <Menu />
           </IconButton>
           <Link to="/">
@@ -257,6 +245,7 @@ class Navbar extends Component {
               <Search alt="Search logo" style={this.searchIcon} />
             </button>
           </form>
+
           <GoogleLogin
             clientId={config.CLIENT_ID}
             isSignedIn={true}
