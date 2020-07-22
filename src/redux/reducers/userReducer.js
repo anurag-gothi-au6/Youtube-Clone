@@ -14,7 +14,7 @@ const userReducer = (state = initialState, action) => {
             return { ...state, isAuthenticating: !state.isAuthenticating }
         case LOGOUT_USER:
             localStorage.removeItem('user')
-            return {...state,user:null}
+            return { ...state, user: null }
         default:
             return state
     }

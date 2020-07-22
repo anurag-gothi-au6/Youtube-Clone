@@ -10,7 +10,6 @@ const Comments = ({ comments }) => {
         alignItems: "baseline",
       }}
     >
-      <h2 style={{}}>Comments</h2>
       {comments.map((comment) => (
         <CommentListItem key={comment.id} comment={comment} />
       ))}

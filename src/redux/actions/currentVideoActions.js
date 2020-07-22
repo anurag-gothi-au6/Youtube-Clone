@@ -8,8 +8,9 @@ export const fetchVideo = videoid => async disptach => {
         let { data } = await axios(
             `${config.BASE_URL}/videos?part=snippet,contentDetails,statistics&key=${config.API_KEY}&id=${videoid}`
         )
-
-
+        const chnlId = data.items[0].snippet.channelId
+        const { data: pictures } = await axios(`${config.BASE_URL}/channels?part=snippet&id=${chnlId},items.id&key=${config.API_KEY}`)
+        data.items[0].snippet.channelId = pictures.items[0].snippet.thumbnails.default.url
         disptach({ type: SET_CURRENT_VIDEO, payload: data })
     }
     catch (err) {

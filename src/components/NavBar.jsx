@@ -202,7 +202,9 @@ class Navbar extends Component {
           </div>
         </Drawer>
       </div>
-    ) : <Redirect to="/login" />;
+    ) : (
+      <Redirect to="/login" />
+    );
   }
 }
 Navbar.propTypes = {

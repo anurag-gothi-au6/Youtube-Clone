@@ -2,14 +2,20 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchTrendingVideos } from "../redux/actions/videoActions";
-import Videos from '../components/Videos'
+import Videos from "../components/Videos";
 class HomePage extends Component {
   componentDidMount() {
     this.props.fetchTrendingVideos();
   }
 
   render() {
-    return !this.props.user ? <Redirect to="/login" /> : <div><Videos /></div>;
+    return !this.props.user ? (
+      <Redirect to="/login" />
+    ) : (
+      <div>
+        <Videos />
+      </div>
+    );
   }
 }
 
