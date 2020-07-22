@@ -25,7 +25,7 @@ import plusIcon from "../assets/plus-icon.png";
 
 const SideList = (props) => {
   const sideListStyle = {
-    // width: "240px",
+    width: "240px",
     backgroundColor: "#f5f5f5",
   };
 
@@ -46,6 +46,7 @@ const SideList = (props) => {
     padding: "8px",
     marginRight: "16px",
     height: "24px",
+    width: "24px",
     boxSizing: "content-box",
     opacity: "0.7",
   };
@@ -157,32 +158,6 @@ const SideList = (props) => {
   const browseChannelTitleStyle = {
     fontSize: "0.9rem",
   };
-
-  // const signInContainerStyle = {
-  //     padding: "16px 32px 12px 32px",
-  //     borderBottom: "rgba(220, 220, 220, 1) 1px solid"
-  // }
-
-  // const signInWordsStyle = {
-  //     fontSize: "0.9rem",
-  //     lineHeight: "21px"
-  // }
-
-  // const signInButtonStyle = {
-  //     borderRadius: "0%",
-  //     marginLeft: "-11px",
-  //     padding: "12px",
-  //     width: "49.297px",
-  //     height: "17px",
-  //     boxSizing: "content-box"
-  // }
-
-  // const signInButtonWordsStyle = {
-  //     fontSize: "0.8rem",
-  //     fontWeight: "600",
-  //     color: "hsla(214, 95%, 43%, 1)"
-  // }
-
   const aboutStyle = {
     padding: "16px 24px 0 24px",
   };
@@ -208,7 +183,7 @@ const SideList = (props) => {
   };
 
   return (
-    <div style={sideListStyle} className='sidelist'>
+    <div style={sideListStyle} className="sidelist">
       <div style={headerStyle}>
         <IconButton style={menuButtonStyle}>
           <Menu style={menuIconStyle} />
@@ -223,42 +198,68 @@ const SideList = (props) => {
       </div>
       <div style={sideListContentContainerStyle} className="scrollbar">
         <div style={mainCategoriesContainerStyle}>
-        <Link to='/' style={{ color: "inherit", textDecoration: "none" }}>
-          <div
-            style={
-              props.location.pathname === "/"
-                ? currentPageHomeContainerStyle
-                : mainCategoriesStyle
-            }
-            className="hovered"
-          >
-            <Home
+          <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+            <div
               style={
                 props.location.pathname === "/"
-                  ? currentPageHomeIconStyle
-                  : mainCategoryHomeIconStyle
+                  ? currentPageHomeContainerStyle
+                  : mainCategoriesStyle
               }
-            />{" "}
-            Home
-          </div>
+              className="hovered"
+            >
+              <Home
+                style={
+                  props.location.pathname === "/"
+                    ? currentPageHomeIconStyle
+                    : mainCategoryHomeIconStyle
+                }
+              />{" "}
+              Home
+            </div>
           </Link>
-          <div style={mainCategoriesStyle} className="hovered">
-            <Whatshot style={mainCategoryOtherIconStyle} />
-            Trending
-          </div>
-          <Link to='/playlist' style={{ color: "inherit", textDecoration: "none" }}>
-          <div style={
-              props.location.pathname === "/playlist"
-                ? currentPageHomeContainerStyle
-                : mainCategoriesStyle
-            } className="hovered">
-            <History style={
+          <Link
+            to="/trending"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            <div
+              style={
+                props.location.pathname === "/trending"
+                  ? currentPageHomeContainerStyle
+                  : mainCategoriesStyle
+              }
+              className="hovered"
+            >
+              <Whatshot
+                style={
+                  props.location.pathname === "/trending"
+                    ? currentPageHomeIconStyle
+                    : mainCategoryHomeIconStyle
+                }
+              />
+              Trending
+            </div>
+          </Link>
+          <Link
+            to="/playlist"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            <div
+              style={
                 props.location.pathname === "/playlist"
-                  ? currentPageHomeIconStyle
-                  : mainCategoryHomeIconStyle
-              }/>
-            Playlists
-          </div>
+                  ? currentPageHomeContainerStyle
+                  : mainCategoriesStyle
+              }
+              className="hovered"
+            >
+              <History
+                style={
+                  props.location.pathname === "/playlist"
+                    ? currentPageHomeIconStyle
+                    : mainCategoryHomeIconStyle
+                }
+              />
+              Playlists
+            </div>
           </Link>
         </div>
         <div style={bestOfYoutubeContainerStyle}>

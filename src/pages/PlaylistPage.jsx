@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {fetchPlaylist} from '../redux/actions/playlistActions'
+import { Redirect } from "react-router-dom";
+
 class PlaylistPage extends Component {
     componentDidMount(){
         this.props.fetchPlaylist()
@@ -8,6 +10,7 @@ class PlaylistPage extends Component {
     render() {
         console.log(this.props.playlist)
         return(
+        this.props.user===null?(<Redirect to='/login' />):
         this.props.playlist!==null?(
             <div>
                 {JSON.stringify(this.props.playlist)}
@@ -19,7 +22,8 @@ class PlaylistPage extends Component {
  
 const mapStateToProps = (storeState)=>{
     return {
-        playlist: storeState.playlistState.playlist
+        playlist: storeState.playlistState.playlist,
+        user: storeState.userState.user
     }
 }
 

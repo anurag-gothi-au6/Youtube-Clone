@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchTrendingVideos } from "../redux/actions/videoActions";
+import { fetchHomeVideos } from "../redux/actions/videoActions";
 import Videos from "../components/Videos";
 class HomePage extends Component {
   componentDidMount() {
-    this.props.fetchTrendingVideos();
+    this.props.fetchHomeVideos();
   }
 
   render() {
-    return !this.props.user ? (
-      <Redirect to="/login" />
-    ) : (
+    return (
       <div>
         <Videos />
       </div>
@@ -25,4 +22,4 @@ const mapStateToProps = (storeState) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchTrendingVideos })(HomePage);
+export default connect(mapStateToProps, { fetchHomeVideos })(HomePage);
