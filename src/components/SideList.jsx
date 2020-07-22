@@ -208,7 +208,7 @@ const SideList = (props) => {
   };
 
   return (
-    <div style={sideListStyle}>
+    <div style={sideListStyle} className='sidelist'>
       <div style={headerStyle}>
         <IconButton style={menuButtonStyle}>
           <Menu style={menuIconStyle} />
@@ -247,12 +247,12 @@ const SideList = (props) => {
             Trending
           </div>
           <Link to='/playlist' style={{ color: "inherit", textDecoration: "none" }}>
-          <div style={mainCategoriesStyle} style={
-              props.location.pathname === "/"
+          <div style={
+              props.location.pathname === "/playlist"
                 ? currentPageHomeContainerStyle
                 : mainCategoriesStyle
             } className="hovered">
-            <History style={mainCategoryOtherIconStyle} style={
+            <History style={
                 props.location.pathname === "/playlist"
                   ? currentPageHomeIconStyle
                   : mainCategoryHomeIconStyle

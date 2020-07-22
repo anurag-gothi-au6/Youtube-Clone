@@ -122,7 +122,7 @@ class Navbar extends Component {
   render() {
     const sideList = <SideList />;
     return this.props.user !== null ? (
-      <div>
+      <div className='navbarSize'>
         <div style={{ ...this.topNavStyle, ...this.topNavZIndex }}>
           <IconButton style={this.sideListButtonStyle}>
             <Menu />

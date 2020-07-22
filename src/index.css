@@ -75,3 +75,13 @@ code {
     transform: rotate(360deg);
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .sidelist {
+    width: 100px;
+    font-size: small;
+  }
+  .navbarSize{
+    width:100px;
+  }
+}
