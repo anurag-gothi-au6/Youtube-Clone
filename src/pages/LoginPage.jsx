@@ -17,6 +17,7 @@ const LoginPage = ({ user, setUser }) => {
     <div>
       <br />
       <br />
+      <h1>Click Below ICON To Login</h1>
       <GoogleLogin
         clientId={config.CLIENT_ID}
         isSignedIn={true}
