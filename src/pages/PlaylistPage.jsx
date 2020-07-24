@@ -1,27 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchPlaylist } from "../redux/actions/playlistActions";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 class PlaylistPage extends Component {
   componentDidMount() {
     this.props.fetchPlaylist();
   }
-  render() {
-    console.log(this.props.playlist);
-    return this.props.user === null ? (
-      <Redirect to="/login" />
-    ) : this.props.playlist !== null ? (
+  render() { 
+    return this.props.playlist !== null ? (
       this.props.playlist.items.map((el) => (
-        <div class="card" key={el.id}>
-          <h5 class="card-header">Playlist</h5>
-          <div class="card-body">
+        <div className="card" key={el.id}>
+          <h5 className="card-header">Playlist</h5>
+          <div className="card-body">
             <img src={el.snippet.thumbnails.medium.url} alt='PlaylistImage'></img>
-            <h5 class="card-title">{el.snippet.title}</h5>
-            <p class="card-text">
+            <h5 className="card-title">{el.snippet.title}</h5>
+            <p className="card-text">
             {el.snippet.description}
             </p>
-            <button class="btn btn-primary">
+            <button className="btn btn-primary">
               Play Playlist
             </button>
           </div>
@@ -43,4 +40,4 @@ const mapStateToProps = (storeState) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchPlaylist })(PlaylistPage);
+export default connect(mapStateToProps, { fetchPlaylist })(PlaylistPage)

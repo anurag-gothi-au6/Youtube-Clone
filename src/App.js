@@ -8,6 +8,8 @@ import VideoDetail from './pages/VideoDetail'
 import SearchResult from './pages/SearchResult'
 import PlaylistPage from './pages/PlaylistPage'
 import TrendingPage from './pages/TrendingPage';
+import withProtected from "./components/withProtected";
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +21,7 @@ function App() {
         <Route  exact path="/login" component={LoginPage}/>
         <Route  exact path="/videos/:videoId" component={VideoDetail}/>
         <Route exact path ='/search/:searchQuery' component={SearchResult}/>
-        <Route exact path='/playlist' component={PlaylistPage}/>
+        <Route exact path='/playlist' component={withProtected(PlaylistPage)}/>
         <Redirect to="/" />
       </Switch>
       </div>
